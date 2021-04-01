@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Настройки";
+}
+<form method="post">
+    <h2>@ViewBag.Title.</h2>
+    <h3>Отображаемые ленты</h3>
+    <p>
+        Добавить ленту -
+        <input type="text" name="linkBox" size="150">
+        <input type="submit" name="add" value="Добавить ленту" />
+    </p>
+    <p>@Html.Raw(ViewBag.Links)</p>
+    <input type="submit" name="delete" value="Удалить выбранные ленты" />
+    <hr />
+    <h3>Настройки отображения</h3>
+    <p>
+        Частота обновления - каждые
+        <input type="text" name="freq" size="10" placeholder=@ViewBag.freq>
+        секунд.<br />
+        Форматировать по тегам? -
+        <input name="isFormed" type="radio" value="formed" @Html.Raw(ViewBag.isFormed) />
+        Форматировать
+        <input name="isFormed" type="radio" value="notFormed" @Html.Raw(ViewBag.isNotFormed) />
+        Не форматировать <br />
+        <br />
+        <input type="submit" name="update" value="Подтвердить изменения" />
+    </p>
+    <hr />
+    <h3>
+        @Html.Raw(ViewBag.Error)
+    </h3>
+</form>
